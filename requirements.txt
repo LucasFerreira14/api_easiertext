@@ -11,3 +11,4 @@ django-cors-headers==3.11.0
 djangorestframework==3.13.1
 requests==2.27.1
 Flask-SQLAlchemy==2.5.1
+psycopg2==2.9.2
