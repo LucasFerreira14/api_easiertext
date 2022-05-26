@@ -5,3 +5,4 @@ Jinja2==2.10.1
 Werkzeug==0.15.3
 flask-marshmallow==0.14.0
 marshmallow-sqlalchemy==0.28.0
+markupsafe==2.0.1
