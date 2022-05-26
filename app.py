@@ -41,8 +41,7 @@ def showAllTexts():
     texts = Texto.query.all()
     texto_schema = TextoSchema(many=True)
     result = texto_schema.dump(texts)
-    return render_template("index.html", result=result)
-
+    return jsonify(result)
 
 @app.route("/texts/add/", methods=["GET", "POST"])
 def add():
