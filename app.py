@@ -4,7 +4,7 @@ from sqlalchemy.dialects import postgresql
 import psycopg2
 
 app = Flask("__name__")
-app.config["SQLALCHEMY_DATABASE_URI"] = ""
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://znsnbvxrrxdwfb:8d7d8a68a323e888d76cbe01ef24bf39fd3927882d362cb7c0e15b24ef558832@ec2-52-3-200-138.compute-1.amazonaws.com:5432/dahehqr4qgkurb"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
