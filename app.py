@@ -40,7 +40,7 @@ def showAllTexts():
     texts = Texto.query.all()
     texto_schema = TextoSchema(many=True)
     result = texto_schema.dump(texts)
-    return jsonify(result)
+    return render_template("index.html", result=result)
 
 
 @app.route("/texts/add/", methods=["GET", "POST"])
@@ -51,7 +51,7 @@ def add():
         db.session.add(text)
         db.session.commit()
         return jsonify(data)
-    return render_template("add.html")
+    return render_template("index.html")
 
 
 @app.route("/texts/edit/<int:id>", methods=["GET", "POST"])
@@ -64,7 +64,7 @@ def edit(id):
         db.session.add(text)
         db.session.commit()
         return Response().status_code
-    return render_template("edit.html", cliente=cliente)
+    return render_template("index.html")
 
 @app.route("/texts/delete/<int:id>", methods=["GET", "DELETE"])
 def delete(id):
