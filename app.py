@@ -51,7 +51,7 @@ def add():
         db.session.add(text)
         db.session.commit()
         return jsonify(data)
-    return render_template("index.html")
+    return redirect(url_for("showAllTexts"))
 
 
 @app.route("/texts/edit/<int:id>", methods=["GET", "POST"])
@@ -63,8 +63,8 @@ def edit(id):
         text.text = data["text"]
         db.session.add(text)
         db.session.commit()
-        return Response().status_code
-    return render_template("index.html")
+        return redirect(url_for("showAllTexts"))
+    return redirect(url_for("showAllTexts"))
 
 @app.route("/texts/delete/<int:id>", methods=["GET", "DELETE"])
 def delete(id):
