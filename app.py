@@ -38,7 +38,7 @@ def index():
 
 @app.route("/texts", methods=["GET", "DELETE"])
 def showAllTexts():
-    texts = Texto.query.all()
+    texts = Texto.query.order_by(Texto.id).all()
     texto_schema = TextoSchema(many=True)
     result = texto_schema.dump(texts)
     return jsonify(result)
